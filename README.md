@@ -9,6 +9,7 @@ This repo containerizes a Flask application using Docker, PostgreSQL, Gunicorn, 
 **Setup**
 
 You need to create a .env.prod and a .env.prod.db file in the root of your directory.
+
 .env.prod
 ```
 FLASK_APP=project/__init__.py
