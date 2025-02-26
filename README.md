@@ -10,30 +10,30 @@ This repo containerizes a Flask application using Docker, PostgreSQL, Gunicorn, 
 
 This command builds a new image and spins up the containers. If this command doesn't work, try running the last command first.
 ```
-docker compose up -d --build
+$ docker compose up -d --build
 ```
 This command creates the SQL tables
 ```
-docker compose exec web python manage.py create_db
+$ docker compose exec web python manage.py create_db
 ```
 This command  removes the volumes along with the containers
 ```
-docker compose down -v
+$ docker compose down -v
 ```
 
 **Production**
 
 This command builds a new image and spins up the containers. If this command doesn't work, try running the last command first.
 ```
-docker compose -f docker-compose.prod.yml up -d --build
+$ docker compose -f docker-compose.prod.yml up -d --build
 ```
 This command creates the SQL tables
 ```
-docker compose -f docker-compose.prod.yml exec web python manage.py create_db
+$ docker compose -f docker-compose.prod.yml exec web python manage.py create_db
 ```
 This command removes the volumes along with the containers
 ```
-docker compose -f docker-compose.prod.yml down -v
+$ docker compose -f docker-compose.prod.yml down -v
 ```
 
 # Portforwarding
@@ -42,11 +42,11 @@ In order to locally host your Flask application, you need to enable portforwardi
 
 **Development**
 ```
-ssh -L localhost:8080:10.253.1.15:5234
+$ ssh -L localhost:8080:10.253.1.15:5234
 ```
  **Production**
  ```
- ssh -L localhost:8080:10.253.1.15:1447
+$ ssh -L localhost:8080:10.253.1.15:1447
  ```
 
 # Uploading
