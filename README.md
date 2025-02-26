@@ -6,6 +6,25 @@ This repo containerizes a Flask application using Docker, PostgreSQL, Gunicorn, 
 
 # Build Instructions
 
+**Setup**
+You need to create a .env.prod and a .env.prod.db file in the root of your directory.
+.env.prod
+```
+FLASK_APP=project/__init__.py
+FLASK_DEBUG=0
+DATABASE_URL=postgresql://<username>:<password>@db:5432/<dbname>
+SQL_HOST=db
+SQL_PORT=5432
+DATABASE=postgres
+APP_FOLDER=/home/app/web
+```
+.env.prod.db
+```
+POSTGRES_USER=<username>
+POSTGRES_PASSWORD=<password>
+POSTGRES_DB=<dbname>
+```
+
 **Development**
 
 This command builds a new image and spins up the containers. If this command doesn't work, try running the last command first.
